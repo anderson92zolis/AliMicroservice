@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "cb72e205-5fd2-4793-8e49-fdc842c82357",
+		"name": "MicroservicesWithBoual",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26628613"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8070/api/v1/schools",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"name\": \"{{$randomUserName}}\",\r\n    \"email\": \"{{$randomEmail}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8222/api/v1/schools",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8222",
+					"path": [
+						"api",
+						"v1",
+						"schools"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/students",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"schoolId\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8222/api/v1/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8222",
+					"path": [
+						"api",
+						"v1",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8070/api/v1/schools/with-students/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8222/api/v1/schools/with-students/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8222",
+					"path": [
+						"api",
+						"v1",
+						"schools",
+						"with-students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
