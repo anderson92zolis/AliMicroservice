@@ -6,33 +6,32 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/schools")
 @RequiredArgsConstructor
 public class SchoolController {
 
-    private final SchoolService schoolService;
+    private final SchoolService service;
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void save(
             @RequestBody School school
     ){
-        schoolService.saveSchool(school);
+        service.saveSchool(school);
     }
 
     @GetMapping
-    public ResponseEntity<List<School>> findAllSchool() {
-        return ResponseEntity.ok(schoolService.findAllSchool());
+    public ResponseEntity<List<School>> findAllSchools() {
+        return ResponseEntity.ok(service.findAllSchool());
     }
 
-    /*
-    @GetMapping("/school/{school-id}")
-    public ResponseEntity<List<Student>> findAllStudents(
+    @GetMapping("/with-students/{school-id}")
+    public ResponseEntity<FullSchoolResponse> findAllSchools(
             @PathVariable("school-id") Integer schoolId
     ) {
-        return ResponseEntity.ok(studentService.findAllStudentsBySchool(schoolId));
+        return ResponseEntity.ok(service.findSchoolsWithStudents(schoolId));
     }
-
-     */
 }

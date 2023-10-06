@@ -26,7 +26,6 @@ public class StudentController {
         return ResponseEntity.ok(studentService.findAllStudent());
     }
 
-    /*
     @GetMapping("/school/{school-id}")
     public ResponseEntity<List<Student>> findAllStudents(
             @PathVariable("school-id") Integer schoolId
@@ -34,5 +33,5 @@ public class StudentController {
         return ResponseEntity.ok(studentService.findAllStudentsBySchool(schoolId));
     }
 
-     */
+
 }
