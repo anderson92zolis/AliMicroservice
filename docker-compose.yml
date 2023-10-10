@@ -20,3 +20,21 @@ services:
       - "80:80"
     depends_on:
       - postgres
+
+  zipkin:
+    container_name: zipkin
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
+    networks:
+      - zipkin
+
+networks:
+  postgres:
+    driver: bridge
+  zipkin:
+    driver: bridge
+
+volumes:
+  postgres:
+  pgadmin:
