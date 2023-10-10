@@ -18,10 +18,9 @@ public class StudentService {
         return repository.findAll();
     }
 
-    /*
+
     public List<Student> findAllStudentsBySchool(Integer schoolId) {
         return repository.findAllBySchoolId(schoolId);
     }
 
-     */
 }

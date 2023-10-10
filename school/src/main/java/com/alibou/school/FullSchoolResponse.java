@@ -1,20 +1,17 @@
 package com.alibou.school;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.*;
 
-@Entity
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class School {
+public class FullSchoolResponse {
 
-    @Id
-    private Integer schoolId;
     private String name;
     private String email;
-
+    List<Student> students;
 }
