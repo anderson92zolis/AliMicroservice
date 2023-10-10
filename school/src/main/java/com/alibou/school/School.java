@@ -13,7 +13,7 @@ import lombok.*;
 public class School {
 
     @Id
-    private Integer id;
+    private Integer schoolId;
     private String name;
     private String email;
 
