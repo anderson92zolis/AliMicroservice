@@ -24,4 +24,4 @@ This project is  to discover the power of microservices architecture where we ar
 - **Production Best Practices:** Learn best practices for securing, monitoring, and deploying microservices in production environments.
 
 
-Thanks so much for the course to https: [AliBouali ](//github.com/ali-bouali)
+Thanks so much for the course: [AliBouali](//github.com/ali-bouali)
